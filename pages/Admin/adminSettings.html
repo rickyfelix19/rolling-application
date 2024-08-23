@@ -20,19 +20,29 @@
 			</p>
 		<![endif]-->
 
-		<div>
-			<h1>Change User Settings</h1>
-			<p>* is required</p>
-			<form>
-				<label for="fullname">Full Name*</label>
-				<input type="text" id="fullname" name="fullname" />
-				<label for="adminlogin">Admin Login*</label>
-				<input type="text" id="adminlogin" name="adminlogin" />
-				<label for="password">Password*</label>
-				<input type="password" id="password" name="password" />
-				<input type="button" id="update" name="update" value="Update" />
-				<input type="button" id="cancel" name="cancel" value="Cancel" />
-			</form>
+		<div class="card">
+			<div class="card-container">
+				<h1>Change User Settings</h1>
+				<p><span style="color: red">*</span> is required</p>
+				<form>
+					<div class="card-body">
+						<label for="fullname">Full Name*</label>
+						<input type="text" id="fullname" name="fullname" />
+					</div>
+					<div class="card-body">
+						<label for="adminlogin">Admin Login*</label>
+						<input type="text" id="adminlogin" name="adminlogin" />
+					</div>
+					<div class="card-body">
+						<label for="password">Password*</label>
+						<input type="password" id="password" name="password" />
+					</div>
+					<div class="card-buttons">
+						<input type="button" id="update" name="update" value="Update" />
+						<input type="button" id="cancel" name="cancel" value="Cancel" />
+					</div>
+				</form>
+			</div>
 		</div>
 
 		<script src="" async defer></script>

@@ -10,7 +10,7 @@
 		<title>Rolling Application</title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="" />
+		<link rel="stylesheet" href="../../index.css" />
 	</head>
 	<body>
 		<!--[if lt IE 7]>
@@ -20,16 +20,39 @@
 			</p>
 		<![endif]-->
 
-		<div>
-			<h1>Welcome Back!</h1>
-			<form>
-				<label for="phonenumber">Phone number</label>
-				<input type="tel" id="phonenumber" name="phonenumber" />
-				<label for="pinnumber">PIN Number</label>
-				<input type="password" id="pinnumber" name="pinnumber" />
-				<input type="button" id="submit" name="submit" value="Login" />
-				<input type="button" id="register" name="register" value="Register" />
-			</form>
+		<div class="card">
+			<div class="card-container">
+				<h1>Welcome Back!</h1>
+				<form>
+					<div class="card-body">
+						<label for="phonenumber">Phone number</label>
+						<input
+							type="tel"
+							id="phonenumber"
+							name="phonenumber"
+							placeholder="123-45-678"
+						/>
+					</div>
+					<div class="card-body">
+						<label for="pinnumber">PIN Number</label>
+						<input
+							type="password"
+							id="pinnumber"
+							name="pinnumber"
+							placeholder="******"
+						/>
+					</div>
+					<div class="card-buttons">
+						<input type="button" id="submit" name="submit" value="Login" />
+						<input
+							type="button"
+							id="register"
+							name="register"
+							value="Register"
+						/>
+					</div>
+				</form>
+			</div>
 		</div>
 
 		<script src="" async defer></script>

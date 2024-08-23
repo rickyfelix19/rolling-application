@@ -10,7 +10,7 @@
 		<title></title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="" />
+		<link rel="stylesheet" href="../../index.css" />
 	</head>
 	<body>
 		<!--[if lt IE 7]>
@@ -20,17 +20,25 @@
 			</p>
 		<![endif]-->
 
-		<div>
-			<h1>What Should I Call You?</h1>
-			<p>* is required</p>
-			<form>
-				<label for="fullname">Full Name*</label>
-				<input type="text" id="fullname" name="fullname" />
-				<label for="password">Password*</label>
-				<input type="password" id="password" name="password" />
-				<input type="button" id="submit" name="submit" value="Register" />
-				<input type="button" id="login" name="login" value="Login" />
-			</form>
+		<div class="card">
+			<div class="card-container">
+				<h1>What Should I Call You?</h1>
+				<p><span style="color: red">*</span> is required</p>
+				<form>
+					<div class="card-body">
+						<label for="fullname">Full Name*</label>
+						<input type="text" id="fullname" name="fullname" />
+					</div>
+					<div class="card-body">
+						<label for="password">Password*</label>
+						<input type="password" id="password" name="password" />
+					</div>
+					<div class="card-buttons">
+						<input type="button" id="submit" name="submit" value="Register" />
+						<input type="button" id="login" name="login" value="Login" />
+					</div>
+				</form>
+			</div>
 		</div>
 
 		<script src="" async defer></script>

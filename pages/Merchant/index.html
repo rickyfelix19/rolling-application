@@ -10,7 +10,7 @@
 		<title></title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="" />
+		<link rel="stylesheet" href="../../index.css" />
 	</head>
 	<body>
 		<!--[if lt IE 7]>
@@ -20,16 +20,39 @@
 			</p>
 		<![endif]-->
 
-		<div>
-			<h1>Welcome Back!</h1>
-			<form>
-				<label for="storename">Store Name</label>
-				<input type="text" id="storename" name="storename" />
-				<label for="password">Password</label>
-				<input type="password" id="password" name="password" />
-				<input type="button" id="submit" name="submit" value="Login" />
-				<input type="button" id="register" name="register" value="Register" />
-			</form>
+		<div class="card">
+			<div class="card-container">
+				<h1>Welcome Back!</h1>
+				<form>
+					<div class="card-body">
+						<label for="storename">Store Name</label>
+						<input
+							type="text"
+							id="storename"
+							name="storename"
+							placeholder="Starbucks"
+						/>
+					</div>
+					<div class="card-body">
+						<label for="password">Password</label>
+						<input
+							type="password"
+							id="password"
+							name="password"
+							placeholder="******"
+						/>
+					</div>
+					<div class="card-buttons">
+						<input type="button" id="submit" name="submit" value="Login" />
+						<input
+							type="button"
+							id="register"
+							name="register"
+							value="Register"
+						/>
+					</div>
+				</form>
+			</div>
 		</div>
 
 		<script src="" async defer></script>
