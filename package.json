@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "prettier": "3.3.3"
+  },
+  "name": "rolling-application",
+  "description": "<p align=\"center\">\r   <a href=\"\" rel=\"noopener\">\r  <img width=200px height=200px src=\"https://i.imgur.com/FxL5qM0.jpg\" alt=\"Bot logo\"></a>\r </p>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickyfelix19/rolling-application.git"
+  },
+  "author": "Jimmy, Darren, Ricky",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/rickyfelix19/rolling-application/issues"
+  },
+  "homepage": "https://github.com/rickyfelix19/rolling-application#readme"
+}
