@@ -7,26 +7,19 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title></title>
-		<meta name="description" content="" />
+		<title>Merchant Collection</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="" />
 	</head>
 	<body>
-		<!--[if lt IE 7]>
-			<p class="browsehappy">
-				You are using an <strong>outdated</strong> browser. Please
-				<a href="#">upgrade your browser</a> to improve your experience.
-			</p>
-		<![endif]-->
-		<div>
-			<h1>Merchant Collection</h1>
+		<h1>Merchant Collection</h1>
 
-			<!-- Toggle Button Below-->
-			<button>Select Merchant</button>
-			<button>Restaurant 1</button>
-		</div>
+		<!-- Toggle Button -->
+		<form action="adminMerchantPage.php" method="POST">
+			<button type="submit" name="merchant" value="Restaurant 1">Select Merchant</button>
+		</form>
 
+		<!-- Merchant Table -->
 		<div>
 			<table>
 				<tr>
@@ -37,26 +30,39 @@
 					<th>Reset Password</th>
 				</tr>
 				<tr>
+					<td>1</td>
 					<td>Coffee-Ku</td>
 					<td>26</td>
 					<td>13 September 2023, 13:30</td>
-					<td><button>Reset Password</button></td>
+					<td>
+						<form action="adminMerchantPage.php" method="POST">
+							<button type="submit" name="reset_password" value="Coffee-Ku">Reset Password</button>
+						</form>
+					</td>
 				</tr>
 				<tr>
+					<td>2</td>
 					<td>Stabucks</td>
 					<td>15</td>
 					<td>12 September 2023, 13:30</td>
-					<td><button>Reset Password</button></td>
+					<td>
+						<form action="adminMerchantPage.php" method="POST">
+							<button type="submit" name="reset_password" value="Stabucks">Reset Password</button>
+						</form>
+					</td>
 				</tr>
 				<tr>
+					<td>3</td>
 					<td>JFC Restaurant</td>
 					<td>38</td>
 					<td>12 September 2023, 13:30</td>
-					<td><button>Reset Password</button></td>
+					<td>
+						<form action="adminMerchantPage.php" method="POST">
+							<button type="submit" name="reset_password" value="JFC Restaurant">Reset Password</button>
+						</form>
+					</td>
 				</tr>
 			</table>
 		</div>
-
-		<script src="" async defer></script>
 	</body>
 </html>

@@ -1,31 +1,26 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title></title>
+		<title>Merchant Homepage</title>
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="" />
 	</head>
 	<body>
-		<!--[if lt IE 7]>
-			<p class="browsehappy">
-				You are using an <strong>outdated</strong> browser. Please
-				<a href="#">upgrade your browser</a> to improve your experience.
-			</p>
-		<![endif]-->
-		<div>
-			<h1>User Stamp Collection</h1>
+		<h1>User Stamp Collection</h1>
 
-			<!-- Toggle Button Below-->
-			<button>Select Merchant</button>
-			<button>Restaurant 1</button>
-		</div>
+		<!-- Toggle Button Below-->
+		<form action="merchantHomepage.php" method="POST">
+			<label for="merchant">Select Merchant:</label>
+			<select name="merchant" id="merchant">
+				<option value="restaurant1">Restaurant 1</option>
+				<option value="restaurant2">Restaurant 2</option>
+				<!-- Add more options as needed -->
+			</select>
+			<input type="submit" value="View Collection">
+		</form>
 
 		<div>
 			<table>
@@ -37,27 +32,16 @@
 					<th>Date Collection</th>
 					<th>Reset Pin Number</th>
 				</tr>
+				<!-- Example table rows -->
 				<tr>
+					<td>1</td>
 					<td>Alfreds Futterkiste</td>
 					<td>00-000-000</td>
 					<td>6</td>
 					<td>13 September 2023, 13:30</td>
 					<td><button>Reset PIN</button></td>
 				</tr>
-				<tr>
-					<td>Alfreds Futterkiste</td>
-					<td>00-000-000</td>
-					<td>5</td>
-					<td>12 September 2023, 13:30</td>
-					<td><button>Reset PIN</button></td>
-				</tr>
-				<tr>
-					<td>John Doe</td>
-					<td>88-888-8888</td>
-					<td>8</td>
-					<td>12 September 2023, 13:30</td>
-					<td><button>Reset PIN</button></td>
-				</tr>
+				<!-- Add more rows as needed -->
 			</table>
 		</div>
 
