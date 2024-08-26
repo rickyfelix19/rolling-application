@@ -8,30 +8,30 @@
     <link rel="stylesheet" href="../../index.css" />
   </head>
   <body>
-    <div class="card">
-      <div class="card-container">
+    <div class="card-form">
+      <div class="card-form-container">
         <h1>Change User Settings</h1>
         <p><span style="color: red">*</span> is required</p>
         <form action="adminSettings.php" method="POST">
-          <div class="card-body">
+          <div class="card-form-body">
             <label for="fullname"
               >Full Name<span style="color: red">*</span></label
             >
             <input type="text" id="fullname" name="fullname" required />
           </div>
-          <div class="card-body">
+          <div class="card-form-body">
             <label for="adminlogin"
               >Admin Login<span style="color: red">*</span></label
             >
             <input type="text" id="adminlogin" name="adminlogin" required />
           </div>
-          <div class="card-body">
+          <div class="card-form-body">
             <label for="password"
               >Password<span style="color: red">*</span></label
             >
             <input type="password" id="password" name="password" required />
           </div>
-          <div class="card-buttons">
+          <div class="card-form-buttons">
             <input type="submit" id="update" name="update" value="Update" />
             <input
               type="button"

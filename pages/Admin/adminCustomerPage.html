@@ -1,72 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Customer Collection</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="" />
-	</head>
-	<body>
-		<h1>Customer Collection</h1>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Customer Collection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../index.css" />
+  </head>
+  <body>
+    <div class="container-stamp">
+      <h1>Customer Collection</h1>
 
-		<!-- Toggle Button -->
-		<form action="adminCustomerPage.php" method="POST">
-			<button type="submit" name="merchant" value="Restaurant 1">Select Merchant</button>
-		</form>
+      <!-- Toggle Button -->
+      <form action="adminCustomerPage.php" method="POST">
+        <select name="merchant" id="merchant">
+          <option value="default" selected="selected">Select Merchant</option>
+          <option value="restaurant1">Restaurant 1</option>
+          <option value="restaurant2">Restaurant 2</option>
+          <!-- Add more options as needed -->
+        </select>
+      </form>
+    </div>
 
-		<!-- Customer Table -->
-		<div>
-			<table>
-				<tr>
-					<th>#</th>
-					<th>Full Name</th>
-					<th>Phone Number</th>
-					<th>Stamp Number</th>
-					<th>Date Collection</th>
-					<th>Reset Pin Number</th>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>Alfreds Futterkiste</td>
-					<td>00-000-000</td>
-					<td>6</td>
-					<td>13 September 2023, 13:30</td>
-					<td>
-						<form action="adminCustomerPage.php" method="POST">
-							<button type="submit" name="reset_pin" value="Alfreds Futterkiste">Reset PIN</button>
-						</form>
-					</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>Alfreds Futterkiste</td>
-					<td>00-000-000</td>
-					<td>5</td>
-					<td>12 September 2023, 13:30</td>
-					<td>
-						<form action="adminCustomerPage.php" method="POST">
-							<button type="submit" name="reset_pin" value="Alfreds Futterkiste">Reset PIN</button>
-						</form>
-					</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>John Doe</td>
-					<td>88-888-8888</td>
-					<td>8</td>
-					<td>12 September 2023, 13:30</td>
-					<td>
-						<form action="adminCustomerPage.php" method="POST">
-							<button type="submit" name="reset_pin" value="John Doe">Reset PIN</button>
-						</form>
-					</td>
-				</tr>
-			</table>
-		</div>
-	</body>
+    <!-- Customer Table -->
+    <div>
+      <table>
+        <tr>
+          <th>#</th>
+          <th>Full Name</th>
+          <th>Phone Number</th>
+          <th>Stamp Number</th>
+          <th>Date Collection</th>
+          <th>Reset Pin Number</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>Alfreds Futterkiste</td>
+          <td>00-000-000</td>
+          <td>6</td>
+          <td>13 September 2023, 13:30</td>
+          <td>
+            <form action="adminCustomerPage.php" method="POST">
+              <button
+                type="submit"
+                name="reset_pin"
+                value="Alfreds Futterkiste"
+              >
+                Reset PIN
+              </button>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Alfreds Futterkiste</td>
+          <td>00-000-000</td>
+          <td>5</td>
+          <td>12 September 2023, 13:30</td>
+          <td>
+            <form action="adminCustomerPage.php" method="POST">
+              <button
+                type="submit"
+                name="reset_pin"
+                value="Alfreds Futterkiste"
+              >
+                Reset PIN
+              </button>
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>John Doe</td>
+          <td>88-888-8888</td>
+          <td>8</td>
+          <td>12 September 2023, 13:30</td>
+          <td>
+            <form action="adminCustomerPage.php" method="POST">
+              <button type="submit" name="reset_pin" value="John Doe">
+                Reset PIN
+              </button>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
 </html>

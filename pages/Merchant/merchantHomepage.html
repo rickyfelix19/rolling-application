@@ -1,50 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Merchant Homepage</title>
-		<meta name="description" content="" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="" />
-	</head>
-	<body>
-		<h1>User Stamp Collection</h1>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Merchant Homepage</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../index.css" />
+  </head>
+  <body>
+    <div class="container-stamp">
+      <h1>User Stamp Collection</h1>
 
-		<!-- Toggle Button Below-->
-		<form action="merchantHomepage.php" method="POST">
-			<label for="merchant">Select Merchant:</label>
-			<select name="merchant" id="merchant">
-				<option value="restaurant1">Restaurant 1</option>
-				<option value="restaurant2">Restaurant 2</option>
-				<!-- Add more options as needed -->
-			</select>
-			<input type="submit" value="View Collection">
-		</form>
+      <!-- Toggle Button Below-->
+      <form action="merchantHomepage.php" method="POST">
+        <select name="merchant" id="merchant">
+          <option value="default" selected="selected">Select Merchant</option>
+          <option value="restaurant1">Restaurant 1</option>
+          <option value="restaurant2">Restaurant 2</option>
+          <!-- Add more options as needed -->
+        </select>
+      </form>
+    </div>
 
-		<div>
-			<table>
-				<tr>
-					<th>#</th>
-					<th>Full Name</th>
-					<th>Phone Number</th>
-					<th>Stamp Number</th>
-					<th>Date Collection</th>
-					<th>Reset Pin Number</th>
-				</tr>
-				<!-- Example table rows -->
-				<tr>
-					<td>1</td>
-					<td>Alfreds Futterkiste</td>
-					<td>00-000-000</td>
-					<td>6</td>
-					<td>13 September 2023, 13:30</td>
-					<td><button>Reset PIN</button></td>
-				</tr>
-				<!-- Add more rows as needed -->
-			</table>
-		</div>
+    <div>
+      <table>
+        <tr>
+          <th>#</th>
+          <th>Full Name</th>
+          <th>Phone Number</th>
+          <th>Stamp Number</th>
+          <th>Date Collection</th>
+          <th>Reset Pin Number</th>
+        </tr>
+        <!-- Example table rows -->
+        <tr>
+          <td>1</td>
+          <td>Alfreds Futterkiste</td>
+          <td>00-000-000</td>
+          <td>6</td>
+          <td>13 September 2023, 13:30</td>
+          <td><button>Reset PIN</button></td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </table>
+    </div>
 
-		<script src="" async defer></script>
-	</body>
+    <script src="" async defer></script>
+  </body>
 </html>
