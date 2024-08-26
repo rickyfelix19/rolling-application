@@ -1,76 +1,78 @@
-html,
-body {
-	height: 100%;
+html {
+  height: 100%;
 }
 
 html {
-	/* https://webgradients.com */
-	background: #ee9ca7; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#ffdde1,
-		#ee9ca7
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#ffdde1,
-		#ee9ca7
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* https://webgradients.com */
+  background: #ee9ca7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffdde1,
+    #ee9ca7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffdde1,
+    #ee9ca7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
 }
 
 .card {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
-	margin: auto;
-	margin-top: 35vh;
-	padding: 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 25vh;
 }
 
 .card-container {
-	text-align: center;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	width: 300px;
-	height: 320px;
-	border-radius: 5%;
-	background: #d3cce3; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#e9e4f0,
-		#d3cce3
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#e9e4f0,
-		#d3cce3
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 70px 0;
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  height: 230px;
+  border-radius: 5%;
+  background: #d3cce3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #e9e4f0,
+    #d3cce3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #e9e4f0,
+    #d3cce3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .card-body {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 10px;
-	margin-bottom: 20px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .card-buttons {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	gap: 10px;
+  margin: 0;
+  padding: 70px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }

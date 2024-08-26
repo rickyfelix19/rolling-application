@@ -1,5 +1,5 @@
 <?php
-include('funtion/function.php'); // Assuming you have a function.php file for database connection
+include('function/function.php'); // Assuming you have a function.php file for database connection
 include('db.php');
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['merchant'])) {
