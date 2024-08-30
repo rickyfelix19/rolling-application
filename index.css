@@ -59,7 +59,7 @@ label {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 25vh;
+  margin-top: 12vh;
 }
 
 .card-form-container {
@@ -186,4 +186,30 @@ label {
   font-size: 12px;
   text-align: center;
   color: #333;
+}
+
+/* Navigation Bar */
+
+.navigation-bar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #8540f5;
+}
+
+.navigation-bar li {
+  float: left;
+}
+
+.navigation-bar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navigation-bar li a:hover:not(.active) {
+  background-color: #d8c6f5;
 }
