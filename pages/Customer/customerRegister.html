@@ -1,50 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Register or Login</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../../index.css" />
-</head>
-<body>
+  </head>
+  <body>
     <!--[if lt IE 7]>
-        <p class="browsehappy">
-            You are using an <strong>outdated</strong> browser. Please
-            <a href="#">upgrade your browser</a> to improve your experience.
-        </p>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
     <![endif]-->
 
-    <div class="card">
-        <div class="card-container">
-            <h1>What Should I Call You?</h1>
-            <p><span style="color: red">*</span> is required</p>
-            <form action="customerRegister.php" method="post">
-                <div class="card-body">
-                    <label for="fullname">Full Name*</label>
-                    <input type="text" id="fullname" name="fullname" required />
-                </div>
-                <div class="card-body">
-                    <label for="phonenumber">Phone number*</label>
-                    <input type="tel" id="phonenumber" name="phonenumber" required />
-                </div>
-                <div class="card-body">
-                    <label for="pinnumber">PIN Number*</label>
-                    <input type="password" id="pinnumber" name="pinnumber" required />
-                </div>
-                <div class="card-buttons">
-                    <input type="submit" id="submit" name="submit" value="Register" />
-                    <input type="submit" id="login" name="login" value="Login" />
-                </div>
-            </form>
-        </div>
+    <div class="card-form">
+      <div class="card-form-container">
+        <h1>What Should I Call You?</h1>
+        <p><span style="color: red">*</span> is required</p>
+        <form action="customerRegister.php" method="post">
+          <div class="card-form-body">
+            <label for="fullname"
+              >Full Name<span style="color: red">*</span></label
+            >
+            <input type="text" id="fullname" name="fullname" required />
+          </div>
+          <div class="card-form-body">
+            <label for="phonenumber"
+              >Phone number<span style="color: red">*</span></label
+            >
+            <input type="tel" id="phonenumber" name="phonenumber" required />
+          </div>
+          <div class="card-form-body">
+            <label for="pinnumber"
+              >PIN Number<span style="color: red">*</span></label
+            >
+            <input type="password" id="pinnumber" name="pinnumber" required />
+          </div>
+          <div class="card-form-buttons">
+            <input type="submit" id="submit" name="submit" value="Register" />
+            <input type="submit" id="login" name="login" value="Login" />
+          </div>
+        </form>
+      </div>
     </div>
 
     <script src="" async defer></script>
-</body>
+  </body>
 </html>

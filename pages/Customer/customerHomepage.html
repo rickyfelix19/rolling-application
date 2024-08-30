@@ -1,50 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Restaurant Page</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../../index.css" />
-</head>
-<body>
-    <div>
-        <!-- Restaurant Name -->
-        <div>
-            <h1>Restaurant Name</h1>
-            <div>
-                <img src="https://placehold.co/600x400" alt="placeholder image" />
-                <h3>Restaurant Address</h3>
-                <p>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                    eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                </p>
-            </div>
-        </div>
+  </head>
+  
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
 
-        <!-- User Stamp -->
-        <div>
-            <div>
-                <img src="https://placehold.co/600x400" alt="placeholder image" />
-                <div>
-                    <p>12 September 2023</p>
-                    <br />
-                    <p>13:22</p>
-                </div>
-            </div>
-        </div>
+
+  <body>
+    <div class='navigation-bar'>   
+      <ul>
+        <li><a href="./customerHomepage.html">Home</a></li>
+        <li><a href="./customerSettings.html">Settings</a></li>
+        <li style="float:right"><a href="./index.html">Logout</a></li>
+      </ul>
     </div>
 
-    <!-- Collect Reward -->
-    <div>
-        <form method="POST" action="customerHomepage.php">
-            <div id="reward-section">
-                <p>Your reward is not yet available</p>
-            </div>
-        </form>
+    <div class="container-stamp">
+      <h1>User Profiles</h1>
+      <select name="merchant" id="merchant">
+        <option value="default" selected="selected">Select Merchant</option>
+        <option value="restaurant1">Restaurant 1</option>
+        <option value="restaurant2">Restaurant 2</option>
+        <!-- Add more options as needed -->
+      </select>
     </div>
 
-    <script src="" async defer></script>
-</body>
+        <div class="container">
+          <div class="restaurant-card">
+            <img
+              src="../../public/images/pexels-kseniachernaya-4450334_Photo by Ksenia Chernaya.jpg"
+              alt="Restaurant Image"
+              class="restaurant-image"
+            />
+            <div class="restaurant-info">
+              <h1 class="restaurant-name">Restaurant Name</h1>
+              <p class="restaurant-address">Restaurant Address</p>
+              <p class="restaurant-description">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              </p>
+            </div>
+          </div>
+          <div class="stamp-collection">
+            <h2>User Stamp Collection</h2>
+            <div class="stamps">
+              <!-- Repeat this block for each stamp -->
+              <div class="stamp">
+                <div class="circle"></div>
+                <p>12 September 2023<br />13:22</p>
+              </div>
+              <!-- Add more stamps here -->
+               <div class="stamp">
+                <div class="circle"></div>
+                <p>12 September 2023<br />13:22</p>
+              </div>
+              <div class="stamp">
+                <div class="circle"></div>
+                <p>12 September 2023<br />13:22</p>
+              </div>
+              <div class="stamp">
+                <div class="circle"></div>
+                <p>12 September 2023<br />13:22</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  </body>
 </html>

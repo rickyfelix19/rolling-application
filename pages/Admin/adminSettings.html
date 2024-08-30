@@ -1,36 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>Change User Settings</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="" />
-	</head>
-	<body>
-		<div class="card">
-			<div class="card-container">
-				<h1>Change User Settings</h1>
-				<p><span style="color: red">*</span> is required</p>
-				<form action="adminSettings.php" method="POST">
-					<div class="card-body">
-						<label for="fullname">Full Name*</label>
-						<input type="text" id="fullname" name="fullname" required />
-					</div>
-					<div class="card-body">
-						<label for="adminlogin">Admin Login*</label>
-						<input type="text" id="adminlogin" name="adminlogin" required />
-					</div>
-					<div class="card-body">
-						<label for="password">Password*</label>
-						<input type="password" id="password" name="password" required />
-					</div>
-					<div class="card-buttons">
-						<input type="submit" id="update" name="update" value="Update" />
-						<input type="button" id="cancel" name="cancel" value="Cancel" onclick="window.location.href='adminDashboard.php'" />
-					</div>
-				</form>
-			</div>
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Change User Settings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../index.css" />
+  </head>
+  <body>
+    <div class="navigation-bar">
+      <ul>
+        <li><a href="./adminCustomerPage.html">Customer Page</a></li>
+        <li><a href="./adminMerchantPage.html">Merchant Page</a></li>
+        <li><a href="./adminSettings.html">Settings</a></li>
+        <li style="float: right"><a href="./index.html">Logout</a></li>
+      </ul>
+    </div>
+
+    <div class="card-form">
+      <div class="card-form-container">
+        <h1>Change User Settings</h1>
+        <p><span style="color: red">*</span> is required</p>
+        <form action="adminSettings.php" method="POST">
+          <div class="card-form-body">
+            <label for="fullname"
+              >Full Name<span style="color: red">*</span></label
+            >
+            <input type="text" id="fullname" name="fullname" required />
+          </div>
+          <div class="card-form-body">
+            <label for="adminlogin"
+              >Admin Login<span style="color: red">*</span></label
+            >
+            <input type="text" id="adminlogin" name="adminlogin" required />
+          </div>
+          <div class="card-form-body">
+            <label for="password"
+              >Password<span style="color: red">*</span></label
+            >
+            <input type="password" id="password" name="password" required />
+          </div>
+          <div class="card-form-buttons">
+            <input type="submit" id="update" name="update" value="Update" />
+            <input
+              type="button"
+              id="cancel"
+              name="cancel"
+              value="Cancel"
+              onclick="window.location.href='adminDashboard.php'"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>

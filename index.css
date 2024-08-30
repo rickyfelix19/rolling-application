@@ -1,76 +1,215 @@
-html,
-body {
-	height: 100%;
+html {
+  height: 100%;
 }
 
 html {
-	/* https://webgradients.com */
-	background: #ee9ca7; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#ffdde1,
-		#ee9ca7
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#ffdde1,
-		#ee9ca7
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* https://webgradients.com */
+  background: #ee9ca7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffdde1,
+    #ee9ca7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffdde1,
+    #ee9ca7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/* Table  */
+table {
+  margin-top: 20px;
+  width: 100%;
+  text-align: left;
+  background: #ffffff;
 }
 
-.card {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
-	margin: auto;
-	margin-top: 35vh;
-	padding: 0;
+td,
+th {
+  border: 1px solid #dee2e6;
+  padding: 8px;
 }
 
-.card-container {
-	text-align: center;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	width: 300px;
-	height: 320px;
-	border-radius: 5%;
-	background: #d3cce3; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#e9e4f0,
-		#d3cce3
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#e9e4f0,
-		#d3cce3
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+table button {
+  background: #dc3545;
+  border: 0px;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
 }
 
-.card-body {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 10px;
-	margin-bottom: 20px;
+/* Form  */
+
+label {
+  display: inline-block;
+  width: 100px;
+  text-align: left;
 }
 
-.card-buttons {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	gap: 10px;
+/* Card-Form  */
+
+.card-form {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 12vh;
+}
+
+.card-form-container {
+  padding: 70px 0;
+  display: flex;
+  flex-direction: column;
+  width: 440px;
+  min-height: 160px;
+  max-height: 300px;
+  border-radius: 5%;
+  background: #d3cce3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #e9e4f0,
+    #d3cce3
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #e9e4f0,
+    #d3cce3
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card-form-body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.card-form-buttons {
+  margin: 0;
+  padding: 70px 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Merchant Selection */
+
+.container-stamp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.restaurant-card {
+  background-color: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 40%;
+}
+
+.restaurant-image {
+  width: 100%;
+  height: auto;
+}
+
+.restaurant-info {
+  padding: 20px;
+}
+
+.restaurant-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.restaurant-address {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.restaurant-description {
+  color: #555;
+}
+
+.stamp-collection {
+  background-color: rgba(154, 124, 243, 0.2);
+  border-radius: 15px;
+  padding: 20px;
+  width: 55%;
+}
+
+.stamp-collection h2 {
+  margin-bottom: 20px;
+}
+
+.stamps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.stamp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  background-color: #9154e4;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.stamp p {
+  font-size: 12px;
+  text-align: center;
+  color: #333;
+}
+
+/* Navigation Bar */
+
+.navigation-bar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #8540f5;
+}
+
+.navigation-bar li {
+  float: left;
+}
+
+.navigation-bar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navigation-bar li a:hover:not(.active) {
+  background-color: #d8c6f5;
 }
