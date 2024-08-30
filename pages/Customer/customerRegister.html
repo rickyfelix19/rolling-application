@@ -4,47 +4,47 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title></title>
-		<meta name="description" content="" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="../../index.css" />
-	</head>
-	<body>
-		<!--[if lt IE 7]>
-			<p class="browsehappy">
-				You are using an <strong>outdated</strong> browser. Please
-				<a href="#">upgrade your browser</a> to improve your experience.
-			</p>
-		<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Register or Login</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../../index.css" />
+</head>
+<body>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">
+            You are using an <strong>outdated</strong> browser. Please
+            <a href="#">upgrade your browser</a> to improve your experience.
+        </p>
+    <![endif]-->
 
-		<div class="card">
-			<div class="card-container">
-				<h1>What Should I Call You?</h1>
-				<p><span style="color: red">*</span> is required</p>
-				<form>
-					<div class="card-body">
-						<label for="fullname">Full Name*</label>
-						<input type="text" id="fullname" name="fullname" />
-					</div>
-					<div class="card-body">
-						<label for="phonenumber">Phone number*</label>
-						<input type="tel" id="phonenumber" name="phonenumber" />
-					</div>
-					<div class="card-body">
-						<label for="pinnumber">PIN Number*</label>
-						<input type="password" id="pinnumber" name="pinnumber" />
-					</div>
-					<div class="card-buttons">
-						<input type="button" id="submit" name="submit" value="Register" />
-						<input type="button" id="login" name="login" value="Login" />
-					</div>
-				</form>
-			</div>
-		</div>
+    <div class="card">
+        <div class="card-container">
+            <h1>What Should I Call You?</h1>
+            <p><span style="color: red">*</span> is required</p>
+            <form action="customerRegister.php" method="post">
+                <div class="card-body">
+                    <label for="fullname">Full Name*</label>
+                    <input type="text" id="fullname" name="fullname" required />
+                </div>
+                <div class="card-body">
+                    <label for="phonenumber">Phone number*</label>
+                    <input type="tel" id="phonenumber" name="phonenumber" required />
+                </div>
+                <div class="card-body">
+                    <label for="pinnumber">PIN Number*</label>
+                    <input type="password" id="pinnumber" name="pinnumber" required />
+                </div>
+                <div class="card-buttons">
+                    <input type="submit" id="submit" name="submit" value="Register" />
+                    <input type="submit" id="login" name="login" value="Login" />
+                </div>
+            </form>
+        </div>
+    </div>
 
-		<script src="" async defer></script>
-	</body>
+    <script src="" async defer></script>
+</body>
 </html>

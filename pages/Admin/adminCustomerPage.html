@@ -7,26 +7,19 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title></title>
-		<meta name="description" content="" />
+		<title>Customer Collection</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="" />
 	</head>
 	<body>
-		<!--[if lt IE 7]>
-			<p class="browsehappy">
-				You are using an <strong>outdated</strong> browser. Please
-				<a href="#">upgrade your browser</a> to improve your experience.
-			</p>
-		<![endif]-->
-		<div>
-			<h1>Customer Collection</h1>
+		<h1>Customer Collection</h1>
 
-			<!-- Toggle Button Below-->
-			<button>Select Merchant</button>
-			<button>Restaurant 1</button>
-		</div>
+		<!-- Toggle Button -->
+		<form action="adminCustomerPage.php" method="POST">
+			<button type="submit" name="merchant" value="Restaurant 1">Select Merchant</button>
+		</form>
 
+		<!-- Customer Table -->
 		<div>
 			<table>
 				<tr>
@@ -38,29 +31,42 @@
 					<th>Reset Pin Number</th>
 				</tr>
 				<tr>
+					<td>1</td>
 					<td>Alfreds Futterkiste</td>
 					<td>00-000-000</td>
 					<td>6</td>
 					<td>13 September 2023, 13:30</td>
-					<td><button>Reset PIN</button></td>
+					<td>
+						<form action="adminCustomerPage.php" method="POST">
+							<button type="submit" name="reset_pin" value="Alfreds Futterkiste">Reset PIN</button>
+						</form>
+					</td>
 				</tr>
 				<tr>
+					<td>2</td>
 					<td>Alfreds Futterkiste</td>
 					<td>00-000-000</td>
 					<td>5</td>
 					<td>12 September 2023, 13:30</td>
-					<td><button>Reset PIN</button></td>
+					<td>
+						<form action="adminCustomerPage.php" method="POST">
+							<button type="submit" name="reset_pin" value="Alfreds Futterkiste">Reset PIN</button>
+						</form>
+					</td>
 				</tr>
 				<tr>
+					<td>3</td>
 					<td>John Doe</td>
 					<td>88-888-8888</td>
 					<td>8</td>
 					<td>12 September 2023, 13:30</td>
-					<td><button>Reset PIN</button></td>
+					<td>
+						<form action="adminCustomerPage.php" method="POST">
+							<button type="submit" name="reset_pin" value="John Doe">Reset PIN</button>
+						</form>
+					</td>
 				</tr>
 			</table>
 		</div>
-
-		<script src="" async defer></script>
 	</body>
 </html>
