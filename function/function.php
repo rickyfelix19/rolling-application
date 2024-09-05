@@ -136,17 +136,17 @@ class Merchant {
 
     // Register a new merchant
     public function register() {
-        $query = "INSERT INTO " . $this->table_name . " (store_name, username, password, ) VALUES (:store_name, username, :password, )";
+        $query = "INSERT INTO " . $this->table_name . " (fullname, username, password, ) VALUES (:fullname, username, :password, )";
         
         $stmt = $this->conn->prepare($query);
 
         // Clean data
-        $this->store_name = htmlspecialchars(strip_tags($this->store_name));
+        $this->store_name = htmlspecialchars(strip_tags($this->fullname));
         $this->username = htmlspecialchars(strip_tags($this->username));
         $this->password = password_hash($this->password, PASSWORD_BCRYPT);
        
         // Bind parameters
-        $stmt->bindParam(':store_name', $this->store_name);
+        $stmt->bindParam(':store_name', $this->fullname);
         $stmt->bindParam(':username', $this->ausername);
         $stmt->bindParam(':password', $this->password);
        
@@ -172,8 +172,8 @@ class Merchant {
 
         if ($row) {
             $this->id = $row['id'];
-            $this->store_name = $row['store_name'];
-            $this->username = $row['ausername'];
+            $this->store_name = $row['fullname'];
+            $this->username = $row['username'];
             $this->password = $row['password'];
           
             return true;
@@ -183,17 +183,17 @@ class Merchant {
 
     // Update merchant details
     public function updateMerchant() {
-        $query = "UPDATE " . $this->table_name . " SET store_name = :store_name, username = :ausername, password = :password WHERE id = :id";
+        $query = "UPDATE " . $this->table_name . " SET fullname = :fullname, username = :username, password = :password WHERE id = :id";
         
         $stmt = $this->conn->prepare($query);
 
         // Clean data
-        $this->store_name = htmlspecialchars(strip_tags($this->store_name));
+        $this->merchant_name = htmlspecialchars(strip_tags($this->merchant_name));
         $this->username = htmlspecialchars(strip_tags($this->username));
         $this->password = password_hash($this->password, PASSWORD_BCRYPT);
 
         // Bind parameters
-        $stmt->bindParam(':store_name', $this->store_name);
+        $stmt->bindParam(':fullname', $this->fullname);
         $stmt->bindParam(':username', $this->username);
         $stmt->bindParam(':password', $this->password);
         $stmt->bindParam(':id', $this->id);
@@ -216,7 +216,7 @@ $merchant = new Merchant($db);
 
 // Register a new merchant
 $merchant->store_name = "New Store";
-$merchant->admin_login = "admin@example.com";
+$merchant->username = "admin@example.com";
 $merchant->password = "securepassword";
 if ($merchant->register()) {
     echo "Merchant registered successfully!";
@@ -233,7 +233,7 @@ if ($merchant->getMerchantById($merchantId)) {
 // Update merchant details
 $merchant->id = 1;
 $merchant->store_name = "Updated Store";
-$merchant->admin_login = "admin_updated@example.com";
+$merchant->username = "admin_updated@example.com";
 $merchant->password = "newpassword";
 if ($merchant->updateMerchant()) {
     echo "Merchant updated successfully!";
@@ -313,4 +313,3 @@ function getAllStampsByCustomer($customer_id) {
 
 
 
-// Other functions (getPro, getCatPro, getBrandPro, getBrands, getCats) remain the same...
