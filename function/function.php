@@ -1,48 +1,245 @@
 <?php
-// Establishing the connection
-$db = mysqli_connect("localhost", "root", "", "cafetaria");
 
-// Function for getting the IP address
-function getRealIpAddr() {
-    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {   
-        // Check IP from share internet
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {   
-        // To check IP is passed from proxy
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    } else {
-        $ip = $_SERVER['REMOTE_ADDR'];
+class Database {
+    private $host = "localhost";
+    private $db_name = "cafetaria";
+    private $username = "root";
+    private $password = "";
+    public $conn;
+
+    // Get the database connection
+    public function getConnection() {
+        $this->conn = null;
+        try {
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->exec("set names utf8");
+        } catch(PDOException $exception) {
+            echo "Connection error: " . $exception->getMessage();
+        }
+        return $this->conn;
     }
-    return $ip;
 }
 
-// Function to change customer's PIN
-function changeCustomerPin($customer_id, $new_pin) {
-    global $db;
-    $query = "UPDATE customers SET pin_number = '$new_pin' WHERE customer_id = '$customer_id'";
-    mysqli_query($db, $query);
+class Customer {
+    private $conn;
+    private $table_name = "customers";  // Assume you have a 'customers' table
+
+    public $id;
+    public $fullname;
+    public $mobile;
+    public $pin
+    
+
+    public function __construct($db) {
+        $this->conn = $db;
+    }
+
+    // Fetch customer by name
+    public function getCustomerByName($fullname) {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE full_name = :name";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':name', $fullname);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
+    // Reset PIN for customer
+    public function resetCustomerPin($fullname, $new_pin) {
+        // Ensure the new PIN is exactly 6 digits
+        if (strlen($new_pin) !== 6 || !ctype_digit($new_pin)) {
+            return false; // Invalid PIN format
+        }
+    
+        // Assuming you store a PIN in the database (e.g., in a 'pin_number' column)
+        $query = "UPDATE " . $this->table_name . " SET pin_number = :new_pin WHERE fullname = :fullname";
+        $stmt = $this->conn->prepare($query);
+    
+        // Bind the parameters
+        $stmt->bindParam(':new_pin', $new_pin);
+        $stmt->bindParam(':name', $fullname);
+    
+        // Execute the query and return true if successful, false otherwise
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function register() {
+        // Insert query
+        $query = "INSERT INTO " . $this->table_name . " (fullname, mobile, id, pin) 
+                  VALUES (:fullname, :mobile,:id, :pin)";
+
+        // Prepare the query
+        $stmt = $this->conn->prepare($query);
+
+        // Sanitize inputs
+        $this->fullname = htmlspecialchars(strip_tags($this->fullname));
+        $this->mobile = htmlspecialchars(strip_tags($this->mobile));
+        $this->id = htmlspecialchars(strip_tags($this->id));
+        $this->pin = htmlspecialchars(strip_tags($this->pin));
+
+        // Bind values
+        $stmt->bindParam(':fullname', $this->fullname);
+        $stmt->bindParam(':mobile', $this->mobile);
+        $stmt->bindParam(':id', $this->id);
+      
+        $stmt->bindParam(':pin', $this->pin);
+
+        // Execute the query
+        if ($stmt->execute()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
-// Function to add a new customer
-function addCustomer($name, $phone, $pin) {
-    global $db;
-    $query = "INSERT INTO customers (customer_name, customer_phone, pin_number) VALUES ('$name', '$phone', '$pin')";
-    mysqli_query($db, $query);
+// Usage Example
+
+// Initialize Database
+$database = new Database();
+$db = $database->getConnection();
+
+// Initialize Customer class
+$customer = new Customer($db);
+
+// Example: Resetting a customer's PIN
+if (isset($_POST['reset_pin'])) {
+    $customerName = $_POST['reset_pin'];
+    $newPin = $customer->resetCustomerPin($customerName);
+    if ($newPin !== false) {
+        echo "New PIN for " . $customerName . ": " . $new_pin;
+    } else {
+        echo "Failed to reset PIN for " . $customerName;
+    }
 }
+
 
 // Function to change merchant's password
-function changeMerchantPassword($merchant_id, $new_password) {
-    global $db;
-    $query = "UPDATE merchants SET password = '$new_password' WHERE merchant_id = '$merchant_id'";
-    mysqli_query($db, $query);
+class Merchant {
+    // Database connection and table name
+    private $conn;
+    private $table_name = "merchants"; // Assuming your table name is 'merchants'
+
+    // Merchant properties
+    public $id;
+    public $store_name;
+    public $username;
+    public $password;
+    
+
+    // Constructor to initialize the database connection
+    public function __construct($db) {
+        $this->conn = $db;
+    }
+
+    // Register a new merchant
+    public function register() {
+        $query = "INSERT INTO " . $this->table_name . " (fullname, username, password, ) VALUES (:fullname, username, :password, )";
+        
+        $stmt = $this->conn->prepare($query);
+
+        // Clean data
+        $this->store_name = htmlspecialchars(strip_tags($this->fullname));
+        $this->username = htmlspecialchars(strip_tags($this->username));
+        $this->password = password_hash($this->password, PASSWORD_BCRYPT);
+       
+        // Bind parameters
+        $stmt->bindParam(':store_name', $this->fullname);
+        $stmt->bindParam(':username', $this->ausername);
+        $stmt->bindParam(':password', $this->password);
+       
+
+        // Execute the query
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
+    // Get merchant details by ID
+    public function getMerchantById($id) {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+
+        // Bind ID parameter
+        $stmt->bindParam(':id', $id);
+
+        // Execute and fetch
+        $stmt->execute();
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($row) {
+            $this->id = $row['id'];
+            $this->store_name = $row['fullname'];
+            $this->username = $row['username'];
+            $this->password = $row['password'];
+          
+            return true;
+        }
+        return false;
+    }
+
+    // Update merchant details
+    public function updateMerchant() {
+        $query = "UPDATE " . $this->table_name . " SET fullname = :fullname, username = :username, password = :password WHERE id = :id";
+        
+        $stmt = $this->conn->prepare($query);
+
+        // Clean data
+        $this->merchant_name = htmlspecialchars(strip_tags($this->merchant_name));
+        $this->username = htmlspecialchars(strip_tags($this->username));
+        $this->password = password_hash($this->password, PASSWORD_BCRYPT);
+
+        // Bind parameters
+        $stmt->bindParam(':fullname', $this->fullname);
+        $stmt->bindParam(':username', $this->username);
+        $stmt->bindParam(':password', $this->password);
+        $stmt->bindParam(':id', $this->id);
+
+        // Execute the query
+        if ($stmt->execute()) {
+            return true;
+        }
+        return false;
+    }
+
+ 
 }
 
-// Function to add a new merchant
-function addMerchant($name, $phone, $password) {
-    global $db;
-    $query = "INSERT INTO merchants (merchant_name, merchant_phone, password) VALUES ('$name', '$phone', '$password')";
-    mysqli_query($db, $query);
+// Example usage
+$database = new Database();
+$db = $database->getConnection();
+
+$merchant = new Merchant($db);
+
+// Register a new merchant
+$merchant->store_name = "New Store";
+$merchant->username = "admin@example.com";
+$merchant->password = "securepassword";
+if ($merchant->register()) {
+    echo "Merchant registered successfully!";
+} else {
+    echo "Failed to register merchant.";
 }
+
+// Fetch merchant details
+$merchantId = 1;
+if ($merchant->getMerchantById($merchantId)) {
+    echo "Merchant Name: " . $merchant->store_name;
+}
+
+// Update merchant details
+$merchant->id = 1;
+$merchant->store_name = "Updated Store";
+$merchant->username = "admin_updated@example.com";
+$merchant->password = "newpassword";
+if ($merchant->updateMerchant()) {
+    echo "Merchant updated successfully!";
+}
+
+
 
 // Function to change admin password
 function changeAdminPassword($admin_id, $new_password) {
@@ -52,9 +249,9 @@ function changeAdminPassword($admin_id, $new_password) {
 }
 
 // Function to add a new admin
-function addAdmin($name, $email, $password) {
+function addAdmin($fullname, $username, $password) {
     global $db;
-    $query = "INSERT INTO admin (admin_name, admin_email, password) VALUES ('$name', '$email', '$password')";
+    $query = "INSERT INTO admin (admin_fullname, admin_username, password) VALUES ('$fullname', '$username', '$password')";
     mysqli_query($db, $query);
 }
 
@@ -116,4 +313,3 @@ function getAllStampsByCustomer($customer_id) {
 
 
 
-// Other functions (getPro, getCatPro, getBrandPro, getBrands, getCats) remain the same...

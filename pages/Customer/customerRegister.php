@@ -1,7 +1,7 @@
 <?php
 // Include the function.php for database interaction functions
 include ('db.php');
-include('function/function.php')
+include('function/function.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fullname = $_POST['fullname'];

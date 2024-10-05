@@ -1,6 +1,6 @@
 <?php
 // Include the functions file
-include('function/function');
+include('function/function.php');
 include('db.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
