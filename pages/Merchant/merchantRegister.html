@@ -27,7 +27,15 @@
             <input type="password" id="password" name="password" required />
           </div>
           <div class="card-form-buttons">
-            <input type="submit" id="submit" name="submit" value="Register" />
+            <input
+              type="submit"
+              id="submit"
+              name="submit"
+              value="Register"
+              pattern="^[a-zA-Z0-9]{6,}$"
+              title="Please enter at least 6 alphanumeric characters."
+              required
+            />/>
             <input
               type="button"
               id="login"
