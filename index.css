@@ -213,3 +213,38 @@ label {
 .navigation-bar li a:hover:not(.active) {
   background-color: #d8c6f5;
 }
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  .card-form-container {
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .restaurant-card {
+    width: 100%;
+  }
+
+  .stamp-collection {
+    width: 100%;
+  }
+
+  .stamps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .navigation-bar li a {
+    padding: 10px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stamps {
+    grid-template-columns: 1fr;
+  }
+
+  .navigation-bar li a {
+    padding: 8px 8px;
+  }
+}
